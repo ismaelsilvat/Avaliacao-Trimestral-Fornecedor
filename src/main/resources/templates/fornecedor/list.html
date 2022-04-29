@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet"  th:href="@{/css/style.css}">
+</head>
+<body>
+    <header>
+        <h2>Avaliação Trimestral - Fornecedor List</h2>
+        <nav>
+            <ul>
+                <li><a href="">Fornecedor List</a></li>
+                <li><a href="../">Index</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <table class="table">
+            <thead class="table-head">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">E-mail</th>
+                    <th scope="col">Telefone</th>
+                </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>1</td>
+                <td>Ismael</td>
+                <td>ismaelteixeiradas@gmail.com</td>
+                <td>991891499</td>
+            </tr>
+                <tr th:each="fornecedor : ${fornecedores}">
+                    <td th:text="${fornecedor.id}"></td>
+                    <td th:text="${fornecedor.nome}"></td>
+                    <td th:text="${fornecedor.email}"></td>
+                    <td th:text="${fornecedor.telefone}"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
